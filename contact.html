@@ -13,22 +13,56 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header sticky-top bg-white shadow-sm">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white container">
-      <a class="navbar-brand fw-bold text-primary" href="index.html"><img src="images/Screenshot_17-4-2026_103046_debtsettlementpartners.co.za.jpeg" alt="Dlogo" class="img-fluid" style="max-width: 70px;" style="padding: 5px;">Debt Settlement Partners</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+   <header class="site-header sticky-top bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg container py-2">
+    
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center fw-bold text-dark" href="index.html">
+      <img src="images/Screenshot_17-4-2026_103046_debtsettlementpartners.co.za.jpeg" 
+           alt="DSP Logo" 
+           class="img-fluid me-2"
+           style="max-width: 60px;">
+      <span>Debt Settlement Partners</span>
+    </a>
+
+    <!-- Toggle Button -->
+    <button class="navbar-toggler border-0" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#mainNavbar" 
+            aria-controls="mainNavbar" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item">
+          <a class="nav-link active fw-semibold" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="contact.html">Contact</a>
+        </li>
+
+        <!-- CTA Button -->
+        <li class="nav-item mt-2 mt-lg-0">
+          <a href="contact.html" class="btn btn-primary px-4">
+            Get Help
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</header>
 
   
         <main>
@@ -41,8 +75,14 @@
             <p class="lead text-muted">Submit your details below and our South African debt specialists will contact you with a clear, confidential plan tailored to your needs.</p>
             
           </div>
-        </div>
+          <!-- IMAGE -->
+      <div class="col-lg-5 text-center">
+        <img src="images/the-81-rules-of-handshake-etiquette.jpg" class="img-fluid modern-img" alt="Customer Support">
       </div>
+        </div>
+          
+      </div>
+      
     </section>
 
     <section class="contact-section py-5 bg-light">

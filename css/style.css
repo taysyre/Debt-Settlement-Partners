@@ -229,3 +229,24 @@ h2 {
     margin-top: 20px;
   }
 }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('images/ChatGPT Image Apr 23, 2026, 12_33_40 PM.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.modern-img {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
