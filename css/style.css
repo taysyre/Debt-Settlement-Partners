@@ -250,3 +250,12 @@ h2 {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
+.whatsapp-float {
+  z-index: 1000;
+}
+
+.navbar-toggler {
+  position: relative;
+  z-index: 1200;
+}
