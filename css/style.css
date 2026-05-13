@@ -50,7 +50,9 @@ section {
 .nav-link.active {
   color: var(--primary);
 }
-
+.logo-left{
+    margin-left: 15px;
+}
 /* ================= HERO ================= */
 .hero-section,
 .page-hero {
