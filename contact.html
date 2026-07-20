@@ -249,24 +249,6 @@ form.addEventListener("submit", async function(e){
 
     };
 
-    // Save to Supabase
-
-    const { error } = await supabaseClient
-        .from("clients")
-        .insert([lead]);
-
-    if(error){
-
-        console.error(error);
-
-        alert("Database Error:\n\n" + error.message);
-
-        submitBtn.disabled = false;
-
-        return;
-
-    }
-
     // Send to Formspree
 
     const response = await fetch(form.action,{
