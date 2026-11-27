@@ -235,11 +235,33 @@ document.addEventListener("DOMContentLoaded", function () {
   function getChatResponse(question) {
     const normalized = " " + question.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim() + " ";
 
-    const afrikaansMarkers = ["skuldhersiening", "skuldberading", "dokumente", "inkomste", "uitgawes", "hallo", "hoe werk", "wat is", "aansoek", "fooie", "dagvaarding", "kredietburo", "kontak"];
-    const xhosaMarkers = ["yintoni", "ndifuna", "ndicela", "nceda", "amatyala", "ingeniso", "iindleko", "amaxwebhu", "molo", "isamani", "qhagamshelana"];
-    const afScore = afrikaansMarkers.filter(function (marker) { return normalized.includes(" " + marker + " "); }).length;
-    const xhScore = xhosaMarkers.filter(function (marker) { return normalized.includes(" " + marker + " "); }).length;
-    const language = xhScore > afScore && xhScore > 0 ? "xh" : afScore > 0 ? "af" : "en";
+    const afrikaansMarkers = [
+      "skuldhersiening", "skuld hersiening", "skuldberading", "dokumente", "inkomste", "uitgawes",
+      "hallo", "hoe werk", "hoe lank", "wat is", "aansoek", "fooie", "dagvaarding",
+      "kredietburo", "kontak", "telefoon", "bekostigbaarheid", "krediteure",
+      "bankstate", "kanselleer", "onttrek", "klaringsertifikaat", "goedendag"
+    ];
+    const xhosaMarkers = [
+      "yintoni", "ndifuna", "ndicela", "nceda", "amatyala", "ingeniso",
+      "iindleko", "amaxwebhu", "molo", "molweni", "isamani", "qhagamshelana",
+      "umnxeba", "lithini", "ingaba", "uhlolo", "izavenge", "isaziso",
+      "ukukwazi ukuhlawula", "ukuphuma", "isatifikethi", "inkundla"
+    ];
+
+    function countMarkers(markers) {
+      return markers.reduce(function (score, marker) {
+        if (normalized.includes(" " + marker + " ")) score += marker.trim().split(" ").length;
+        return score;
+      }, 0);
+    }
+
+    const afScore = countMarkers(afrikaansMarkers);
+    const xhScore = countMarkers(xhosaMarkers);
+    const language = xhScore > afScore && xhScore > 0
+      ? "xh"
+      : afScore > xhScore && afScore > 0
+        ? "af"
+        : "en";
 
     function findAmount(labels) {
       const match = normalized.match(new RegExp("(?:" + labels + ")\\s*(?:is|of|yi|ngu|:|=)?\\s*(?:r\\s*)?([0-9][0-9, ]*(?:\\.[0-9]{1,2})?)", "i"));
